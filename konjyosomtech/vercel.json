@@ -1,0 +1,48 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "frontend/assets/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/frontend/assets/(.*)",
+      "dest": "/frontend/assets/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/assets/$1"
+    },
+    {
+      "src": "/admin$",
+      "dest": "/admin-panel/dashboard.html"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin-panel/$1"
+    },
+    {
+      "src": "/technician$",
+      "dest": "/technician-panel/dashboard.html"
+    },
+    {
+      "src": "/technician/(.*)",
+      "dest": "/technician-panel/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|svg|ico|woff|woff2|ttf|eot))",
+      "dest": "/frontend/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ]
+}

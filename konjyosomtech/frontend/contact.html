@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Konjyosom Tech Solutions</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Konjyosom Tech" style="height:40px;width:auto;"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="booking.html" >Book Service</a></li>
+                </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section style="padding: 120px 0 60px; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 15px;">Contact Us</h1>
+            <p style="font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto;">We'd love to hear from you. Reach out for support, inquiries, or partnerships.</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 20px;">Let's Start a Conversation</h2>
+                    <p style="color: var(--gray); line-height: 1.8; margin-bottom: 30px;">Whether you have a technical issue, want to discuss a project, or just want to say hello, our team is ready to assist you.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,188,212,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 20px;"></i></div>
+                            <div><h4 style="font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 4px;">Our Office</h4><p style="color: var(--gray); font-size: 14px;">Konjyosom 4, Nepal</p></div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,188,212,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-phone" style="color: var(--secondary); font-size: 20px;"></i></div>
+                            <div><h4 style="font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 4px;">Phone</h4><p style="color: var(--gray); font-size: 14px;"><a href="tel:9865057546" style="color: var(--secondary);">9865057546</a></p></div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,188,212,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-envelope" style="color: var(--secondary); font-size: 20px;"></i></div>
+                            <div><h4 style="font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 4px;">Email</h4><p style="color: var(--gray); font-size: 14px;"><a href="mailto:abhijittamang69@gmail.com" style="color: var(--secondary);">abhijittamang69@gmail.com</a></p></div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,188,212,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-clock" style="color: var(--secondary); font-size: 20px;"></i></div>
+                            <div><h4 style="font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 4px;">Working Hours</h4><p style="color: var(--gray); font-size: 14px;">Sunday - Friday: 9:00 AM - 6:00 PM<br>Saturday: Closed</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 35px;">
+                    <h3 style="font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 25px;">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Full Name</label><input type="text" name="fullName" placeholder="Your name" required></div>
+                            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="98XXXXXXXX"></div>
+                            <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="How can we help?" required></div>
+                        </div>
+                        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us more about your inquiry..." required></textarea></div>
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 0 0 60px;">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0!2d85.3590084!3d27.547088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb130042f07005%3A0x488027c673dd27ce!2sAbhijit%20kutti%20(Konjyosom)!5e0!3m2!1sen!2snp!4v1" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Konjyosom Tech" style="height:40px;width:auto;"></a>
+                    <p>Your trusted technology partner at Konjyosom 4. Delivering excellence in IT services since 2015.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/konjyosomtech" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/konjyosomtech" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/konjyosomtech" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/konjyosomtech" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@konjyosomtech" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/9779865057546" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+</div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service-details.html?id=cctv">CCTV Surveillance</a></li>
+                        <li><a href="service-details.html?id=access-control">Access Control</a></li>
+                        <li><a href="service-details.html?id=elv">ELV Systems</a></li>
+                        <li><a href="service-details.html?id=network">Network Infrastructure</a></li>
+                        <li><a href="service-details.html?id=maintenance">Maintenance & Support</a></li>
+                    </ul>
+                </div>
+<div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Konjyosom 4, Nepal</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:9865057546">9865057546</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:abhijittamang69@gmail.com">abhijittamang69@gmail.com</a></p>
+                    <p><i class="fas fa-clock"></i> Sun - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Konjyosom Tech Solutions Pvt. Ltd. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showToast('Message sent successfully! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service | Konjyosom Tech Solutions</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Konjyosom Tech" style="height:40px;width:auto;"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" >Book Service</a></li>
+                </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section style="padding: 120px 0 60px; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 15px;">Book a Service</h1>
+            <p style="font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto;">Schedule a service appointment with our expert technicians</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <div class="booking-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div class="card" style="padding: 40px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Service Booking Form</h2>
+                    <p style="color: var(--gray); font-size: 14px; margin-bottom: 30px;">Fill in the details below and we'll confirm your appointment within 24 hours.</p>
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="fullName" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="98XXXXXXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Service Type *</label>
+                                <select name="serviceType" required>
+                                    <option value="">Select a service</option>
+                                    <option value="CCTV Surveillance">CCTV Surveillance</option>
+                                    <option value="Access Control">Access Control</option>
+                                    <option value="ELV Systems">ELV Systems</option>
+                                    <option value="Network Infrastructure">Network Infrastructure</option>
+                                    <option value="Maintenance & Support">Maintenance & Support</option>
+                                    <option value="Security Consulting">Security Consulting</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Date *</label>
+                                <input type="date" name="preferredDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address / Location</label>
+                            <input type="text" name="address" placeholder="Your address or location for on-site service">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Description *</label>
+                            <textarea name="description" placeholder="Describe the issue or service you need..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;"><i class="fas fa-calendar-check"></i> Book Service</button>
+                    </form>
+                </div>
+                <div>
+                    <div class="card" style="margin-bottom: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 15px;"><i class="fas fa-info-circle" style="color: var(--secondary); margin-right: 8px;"></i>Booking Info</h3>
+                        <div style="font-size: 14px; color: var(--gray); line-height: 2;">
+                            <p><i class="fas fa-clock" style="width: 20px; color: var(--secondary);"></i> Confirmation within 24h</p>
+                            <p><i class="fas fa-user-tie" style="width: 20px; color: var(--secondary);"></i> Certified technicians</p>
+                            <p><i class="fas fa-shield-alt" style="width: 20px; color: var(--secondary);"></i> Warranty on all work</p>
+                            <p><i class="fas fa-phone" style="width: 20px; color: var(--secondary);"></i> Support: 9865057546</p>
+                        </div>
+                    </div>
+                    <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+                        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px;">Need a Quote First?</h3>
+                        <p style="font-size: 13px; opacity: 0.9; margin-bottom: 20px; line-height: 1.6;">Not sure about the service? Request a free quotation and our team will assess your needs.</p>
+                        <a href="quotation.html" class="btn-white" style="width: 100%; justify-content: center;">Request Quotation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Konjyosom Tech" style="height:40px;width:auto;"></a>
+                    <p>Your trusted technology partner at Konjyosom 4. Delivering excellence in IT services since 2015.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/konjyosomtech" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/konjyosomtech" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/konjyosomtech" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/konjyosomtech" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@konjyosomtech" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/9779865057546" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+</div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service-details.html?id=cctv">CCTV Surveillance</a></li>
+                        <li><a href="service-details.html?id=access-control">Access Control</a></li>
+                        <li><a href="service-details.html?id=elv">ELV Systems</a></li>
+                        <li><a href="service-details.html?id=network">Network Infrastructure</a></li>
+                        <li><a href="service-details.html?id=maintenance">Maintenance & Support</a></li>
+                    </ul>
+                </div>
+<div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Konjyosom 4, Nepal</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:9865057546">9865057546</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:abhijittamang69@gmail.com">abhijittamang69@gmail.com</a></p>
+                    <p><i class="fas fa-clock"></i> Sun - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Konjyosom Tech Solutions Pvt. Ltd. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>

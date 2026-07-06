@@ -1,0 +1,51 @@
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 42px; }
+    .why-us-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .process-steps { flex-direction: column; }
+    .step-arrow { transform: rotate(90deg); }
+    .dashboard-grid { grid-template-columns: 1fr !important; }
+    .dash-sidebar { transform: translateX(-100%); position: fixed; z-index: 1000; }
+    .dash-sidebar.active { transform: translateX(0); }
+    .dash-main { margin-left: 0 !important; }
+    .dash-toggle { display: flex !important; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; top: 70px; left: 0; right: 0;
+        background: var(--white); flex-direction: column;
+        padding: 20px; gap: 15px; box-shadow: var(--shadow);
+        transform: translateY(-150%); transition: var(--transition);
+    }
+    .nav-links.active { transform: translateY(0); }
+    .hamburger { display: flex !important; }
+    .hero { min-height: auto; padding: 100px 20px 40px; }
+    .hero-title { font-size: 32px; }
+    .hero-stats { flex-direction: column; gap: 20px; padding: 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .section-header h2 { font-size: 28px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; text-align: center; padding: 30px; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr !important; }
+    .login-grid { grid-template-columns: 1fr !important; }
+    .login-image { display: none; }
+    .service-detail-grid { grid-template-columns: 1fr !important; }
+    .booking-grid { grid-template-columns: 1fr !important; }
+    .dash-header { flex-direction: column; gap: 10px; }
+    .dash-stats { grid-template-columns: 1fr !important; }
+    .dash-table-wrap { overflow-x: auto; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 26px; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons a { width: 100%; justify-content: center; }
+    .experience-badge { left: 10px; bottom: 10px; padding: 12px 18px; }
+    .exp-years { font-size: 24px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .process-steps { gap: 30px; }
+    .step { width: 100%; }
+}

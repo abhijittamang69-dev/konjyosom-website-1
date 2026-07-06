@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | Technician</title>
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/dashboard.css">
+    <link rel="stylesheet" href="../frontend/assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+    (function requireTechAuth() {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!token || user.role !== 'technician') {
+            window.location.href = '../frontend/login.html';
+        }
+    })();
+    </script>
+    <div class="dash-layout">
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar-header"><i class="fas fa-microchip"></i><span>Konjyosom Tech</span></div>
+            <nav class="dash-nav">
+                <a href="dashboard.html" class="dash-nav-item"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="jobs.html" class="dash-nav-item"><i class="fas fa-wrench"></i> My Jobs</a>
+                <a href="job-details.html" class="dash-nav-item active"><i class="fas fa-clipboard-list"></i> Job Details</a>
+                <a href="upload-report.html" class="dash-nav-item"><i class="fas fa-upload"></i> Upload Report</a>
+                <a href="#" onclick="logout();return false;" class="dash-nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+        <main class="dash-main">
+            <header class="dash-header">
+                <div class="dash-toggle" id="dashToggle"><i class="fas fa-bars"></i></div>
+                <h2 style="font-size:18px;font-weight:600;color:var(--primary);">Job Details</h2>
+                <div class="dash-profile">
+                    <div class="dash-profile-info"><span>Technician</span><small><span class="badge badge-tech">Technician</span></small></div>
+                    <img src="assets/images/tech.jpg" alt="Tech">
+                </div>
+            </header>
+            <div class="dash-content">
+                <h1 class="dash-title">Job #B001 Details</h1>
+                <p class="dash-subtitle">Complete information about this service job.</p>
+                <div style="display:grid;grid-template-columns:2fr 1fr;gap:25px;">
+                    <div class="dash-card">
+                        <div class="dash-card-header"><h3>Job Information</h3><span class="status status-inprogress">In Progress</span></div>
+                        <div class="dash-card-body">
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:14px;">
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Service Type</p><p style="font-weight:600;color:var(--primary);">Hardware Repair</p></div>
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Client Name</p><p style="font-weight:600;color:var(--primary);">John Doe</p></div>
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Phone</p><p style="font-weight:600;color:var(--primary);">9865057546</p></div>
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Email</p><p style="font-weight:600;color:var(--primary);">john@example.com</p></div>
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Address</p><p style="font-weight:600;color:var(--primary);">Konjyosom 4, Nepal</p></div>
+                                <div><p style="color:var(--gray);margin-bottom:4px;">Preferred Date</p><p style="font-weight:600;color:var(--primary);">2025-07-05</p></div>
+                            </div>
+                            <div style="margin-top:20px;">
+                                <p style="color:var(--gray);margin-bottom:8px;">Description</p>
+                                <p style="font-size:14px;line-height:1.7;">Laptop not booting up. Suspected motherboard issue. Need urgent repair as client needs it for work.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dash-card" style="margin-bottom:20px;">
+                            <div class="dash-card-header"><h3>Actions</h3></div>
+                            <div class="dash-card-body" style="display:flex;flex-direction:column;gap:10px;">
+                                <button class="btn-success" style="width:100%;justify-content:center;" onclick="showToast('Job marked as completed!')"><i class="fas fa-check"></i> Mark Complete</button>
+                                <a href="upload-report.html" class="btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-upload"></i> Upload Report</a>
+                                <button class="btn-danger" style="width:100%;justify-content:center;"><i class="fas fa-times"></i> Report Issue</button>
+                            </div>
+                        </div>
+                        <div class="dash-card">
+                            <div class="dash-card-header"><h3>Timeline</h3></div>
+                            <div class="dash-card-body">
+                                <ul style="font-size:13px;color:var(--gray);line-height:2;">
+                                    <li><i class="fas fa-circle" style="color:var(--success);font-size:8px;margin-right:8px;"></i>Job assigned - July 4, 2025</li>
+                                    <li><i class="fas fa-circle" style="color:var(--secondary);font-size:8px;margin-right:8px;"></i>In Progress - July 5, 2025</li>
+                                    <li><i class="fas fa-circle" style="color:#ddd;font-size:8px;margin-right:8px;"></i>Completed - Pending</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../frontend/assets/js/main.js"></script>
+    <script src="../frontend/assets/js/api.js"></script>
+    <script src="../frontend/assets/js/auth.js"></script>
+    <script>document.getElementById('dashToggle').addEventListener('click', () => { document.getElementById('dashSidebar').classList.toggle('active'); });</script>
+</body>
+</html>

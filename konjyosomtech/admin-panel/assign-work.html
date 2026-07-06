@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Work | Admin</title>
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/dashboard.css">
+    <link rel="stylesheet" href="../frontend/assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+    (function requireAdminAuth() {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!token || user.role !== 'admin') {
+            window.location.href = '../frontend/login.html';
+        }
+    })();
+    </script>
+    <div class="dash-layout">
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar-header"><i class="fas fa-microchip"></i><span>Konjyosom Tech</span></div>
+            <nav class="dash-nav">
+                <a href="dashboard.html" class="dash-nav-item"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="bookings.html" class="dash-nav-item"><i class="fas fa-calendar-check"></i> Bookings</a>
+                <a href="quotations.html" class="dash-nav-item"><i class="fas fa-file-invoice"></i> Quotations</a>
+                <a href="technicians.html" class="dash-nav-item"><i class="fas fa-users-cog"></i> Technicians</a>
+                <a href="assign-work.html" class="dash-nav-item active"><i class="fas fa-tasks"></i> Assign Work</a>
+                <a href="reports.html" class="dash-nav-item"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="#" onclick="logout();return false;" class="dash-nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+        <main class="dash-main">
+            <header class="dash-header">
+                <div class="dash-toggle" id="dashToggle"><i class="fas fa-bars"></i></div>
+                <h2 style="font-size:18px;font-weight:600;color:var(--primary);">Assign Work</h2>
+                <div class="dash-profile">
+                    <div class="dash-profile-info"><span>Admin</span><small><span class="badge badge-admin">Administrator</span></small></div>
+                    <img src="assets/images/admin.jpg" alt="Admin">
+                </div>
+            </header>
+            <div class="dash-content">
+                <h1 class="dash-title">Assign Work to Technicians</h1>
+                <p class="dash-subtitle">Assign pending bookings to available technicians.</p>
+                <div class="dash-card">
+                    <div class="dash-card-header"><h3>Pending Bookings</h3></div>
+                    <div class="dash-card-body">
+                        <div class="dash-table-wrap">
+                            <table class="data-table">
+                                <thead><tr><th>ID</th><th>Client</th><th>Service</th><th>Date</th><th>Assign To</th><th>Action</th></tr></thead>
+                                <tbody id="assignTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../frontend/assets/js/main.js"></script>
+    <script src="../frontend/assets/js/api.js"></script>
+    <script src="../frontend/assets/js/auth.js"></script>
+    <script src="../frontend/assets/js/admin.js"></script>
+    <script>
+        document.getElementById('dashToggle').addEventListener('click', () => { document.getElementById('dashSidebar').classList.toggle('active'); });
+        // Populate assign table
+        const bookings = Store.get('bookings').filter(b => b.status === 'pending');
+        document.getElementById('assignTable').innerHTML = bookings.map(b => `
+            <tr>
+                <td>#${b.id}</td><td>${b.fullName || 'Guest'}</td><td>${b.serviceType || 'General'}</td><td>${formatDate(b.preferredDate || b.createdAt)}</td>
+                <td><select style="padding:4px 8px;border-radius:4px;border:1px solid #ddd;font-size:12px;"><option>Select Tech</option><option>Ram Sharma</option><option>Hari Prasad</option><option>Sita Gurung</option></select></td>
+                <td><button class="btn-success" style="padding:4px 10px;font-size:12px;" onclick="showToast('Work assigned successfully!');Store.update('bookings','${b.id}',{status:'inprogress'});location.reload();">Assign</button></td>
+            </tr>
+        `).join('') || '<tr><td colspan="6" style="text-align:center;padding:30px;">No pending bookings to assign</td></tr>';
+    </script>
+</body>
+</html>
