@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Counter Animation
     const counters = document.querySelectorAll('.stat-num');
     counters.forEach(counter => {
+        const text = counter.innerText.trim();
+        
+        // Skip if text contains letters, slashes, or dashes (not a pure number like "500+", "99%")
+        if (!/^\d+[\+%]?$/.test(text)) {
+            return; // Don't animate "9am-5pm/Sun-Thu", etc.
+        }
+        
         const target = parseInt(counter.innerText);
         const suffix = counter.innerText.replace(/[0-9]/g, '');
         let count = 0;
